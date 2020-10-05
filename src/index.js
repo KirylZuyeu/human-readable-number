@@ -47,27 +47,27 @@ module.exports = function toReadable(number) {
         if(pointS != 0){
             answer = decimal[pointD] + ' ' + simpleNumber[pointS];
         } else {
-        answer = decimal[pointD];
+            answer = decimal[pointD];
     }
     }
 // Если число в интервале между 99 и 999  
     if (number.toString().length == 3){
 //Если не оканчивается на 0 и две последние цифры в интервале 20 - 99
         if (pointS != 0 && 20 <= pointT && pointT <= 99){
-        answer = simpleNumber[pointH] + ' ' + 'hundred' + ' ' + decimal[pointD]+ ' ' + simpleNumber[pointS];
+            answer = simpleNumber[pointH] + ' ' + 'hundred' + ' ' + decimal[pointD]+ ' ' + simpleNumber[pointS];
         } 
 //Если оканчивается на 0 и две последние цифры в интервале 20 - 99
         else if (pointS == 0 && 20 <= pointT && pointT <= 99) {
-        answer = simpleNumber[pointH] + ' ' + 'hundred' + ' ' + decimal[pointD];
+            answer = simpleNumber[pointH] + ' ' + 'hundred' + ' ' + decimal[pointD];
         } 
 //Если две последние цифры в интервале 0 - 19, но не два 0
         else if ( 0 < pointT && pointT <= 19) {
-        answer = simpleNumber[pointH] + ' ' + 'hundred' + ' ' + simpleNumber[pointT];
+            answer = simpleNumber[pointH] + ' ' + 'hundred' + ' ' + simpleNumber[pointT];
         } 
 //Если оканчивается на два 00
         else {
             answer = simpleNumber[pointH] + ' ' + 'hundred';
         }
-}
+    }
 return answer;
 }
